@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="VLSM Calculator">
+        <meta name="keywords" content="VLSM Calculator, IP Calculator, Variable Length Subnet Mask Calculator">
+        <meta name="author" content="ABTanjir">
+        
+        <link href="favicon.png" rel=icon>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Vlsm Calculator :: ABTanjir</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1 class="text-center">VLSM Calculator</h1>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <form id="form">
+                        <div class="form-group">
+                            <label>Type Your IP</label>
+                            <div class="form-row">
+                                <div class="col-9">
+                                    <input class="form-control" id="network" type="text" placeholder="Network IP Address">
+                                </div>
+                                <div class="col-3">
+                                    <input id="netmask" class="form-control" type="text" maxlength="2" placeholder="Mask">
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="lan_number" >
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-secondary" id="generate_host_input" type="button">Go</button>
+                            </div>
+                        </div>
+                        <em class="muted op-5">How many lan will be there in you network?</em>
+
+                        <div class="form-group mt-3">
+                            <label class="show_on_condition hide">Specify hosts in every lan</label>
+                            <div id="host_in_lan">
+                                
+                            </div>
+                        </div>
+                        
+                        <input id="hosts" class="form-control" type="hidden">
+                        <button id="submit" type="submit" class="btn btn-primary">Calculate VLSM</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row" id="final_result">
+
+            </div>
+
+
+        </div>
+
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+        <script src="script.js"></script>
+    </body>
+
+</html>
