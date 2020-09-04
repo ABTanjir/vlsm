@@ -238,7 +238,7 @@ $(document).ready(function(){
             '<input class="form-control host_name" type="text" value="Lan '+(parseInt(index)+1)+'" placeholder="Name">'+
             '</div>'+
             '<div class="col-6">'+
-            '<input class="form-control lan_number" type="text" maxlength="3" placeholder="Number of hosts">'+
+            '<input class="form-control lan_number" required type="number" maxlength="3" placeholder="Number of hosts">'+
             '</div>'+
             '</div>'
             final_html += op;
@@ -260,7 +260,10 @@ $(document).ready(function(){
 
     $("#form").submit(function (event) {
         event.preventDefault();
-        ipToBinary($('#network').val());
-        calculate_vlsm();
+        if($('#host_in_lan').find('.lan_number').length <= 0){
+            $('#host_in_lan').html('<p class="text-danger">Please add some lan to calculate</p>');
+        }else{
+            calculate_vlsm();
+        }
     });
 });
